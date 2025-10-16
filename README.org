@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2025-10-16>
-#+lastmod: <2025-10-16 22:45>
+#+lastmod: <2025-10-16 23:32>
 #+options: num:t
 #+startup: overview
 
@@ -10,12 +10,23 @@
 - How to operate with big numbers in Julia?
   - I can not use int values, since its lame to have only 16 bytes for UInt128 in Julia. However, apperently, I can use the Julia's BigInt to store extremely big numbers, since its an arbitrary precision integer, which relies solely on RAM (I have 24GB, so its pretty enough).
 
+- For realle big numbers I should stop using the BigInt objects unless I actually need them, since this slows calculations.
+
+- I should aim for the [[- I should aim for the https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test][Miller–Rabin test]]
+  - Built in Julia function uses Miller-Rabin test by default.
+
 * How this works?
 - Apperently, I can not upload any file greater than 100MB to github (pi number is 1GB). Therefore, I have to store it locally and also put it into any cloud for remote access.
+
 - To download the file you should use the following link:
   [[https://drive.google.com/file/d/1PUmy9a8sRsoXvGgo7h4Vewufu9iQWGHA/view?usp=sharing ][Link to google drive]]
   Once you donwload it, drop it to the repository root.
+
 - Then just simply run
   #+begin_src bash
   make run
   #+end_src
+
+* Sources
+- [[https://www.youtube.com/watch?v=zmhUlVck3J0][Miller-Rabin test explained (video)]]
+- [[https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test][MR test implimintation]]

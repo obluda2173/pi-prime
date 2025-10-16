@@ -16,9 +16,9 @@ end
 
 # first()
 
+
 # apperantly BigInt in julia is limited by ram only
 function second()
-    # s = join(readlines("../pi.txt"))
     s = join(readlines("pi.txt"))
     # prefix = s[1:613373]
     prefix = s[3:61] # from 3 since I need to skip the 3 and . (julia for some reasin starts indexing from 1)
@@ -32,3 +32,5 @@ function second()
 end
 
 second()
+
+
