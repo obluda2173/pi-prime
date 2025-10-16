@@ -1,0 +1,11 @@
+#+title: Readme
+#+author: Erik An
+#+email: obluda2173@gmail.com
+#+date: <2025-10-16>
+#+lastmod: <2025-10-16 22:09>
+#+options: num:t
+#+startup: overview
+
+* General notes
+- How to operate with big numbers in Julia?
+  - I can not use int values, since its lame to have only 16 bytes for UInt128 in Julia. However, apperently, I can use the Julia's BigInt to store extremely big numbers, since its an arbitrary precision integer, which relies solely on RAM (I have 24GB, so its pretty enough).
