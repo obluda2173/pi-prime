@@ -17,10 +17,8 @@ end
 # first()
 
 
-# apperantly BigInt in julia is limited by ram only
 function second()
     s = join(readlines("pi.txt"))
-    # prefix = s[1:613373]
     prefix = s[3:61] # from 3 since I need to skip the 3 and . (julia for some reasin starts indexing from 1)
     prime = parse(BigInt, prefix)
 
@@ -34,7 +32,7 @@ end
 # second()
 
 
-function third(filename, max_length=1000)
+function third(filename, rounds=20, max_length=1000)
     str = read(filename, String)
     digits_str = str[3:end] # skip the "1."
 
@@ -47,8 +45,10 @@ function third(filename, max_length=1000)
 
         num = parse(BigInt, substring)
 
-        if isprime(num)
+        if isprime(num, rounds)
+            accuracy = 1 - 4^float(-rounds)
             println("Found prime prefix of length $len")
+            println("Accuracy of the found number being prime is: ", accuracy)
             println("Prime number: $(substring[1:len])")
             return num
         end
