@@ -31,6 +31,32 @@ function second()
     println(prime)
 end
 
-second()
+# second()
 
 
+function third(filename, max_length=1000)
+    str = read(filename, String)
+    digits_str = str[3:end] # skip the "1."
+
+    for len in min(max_length, length(digits_str)):-1:1
+        substring = digits_str[1:len]
+
+        if substring[end] in ('0', '2', '4', '5', '6', '8') # simple optimisation
+            continue
+        end
+
+        num = parse(BigInt, substring)
+
+        if isprime(num)
+            println("Found prime prefix of length $len")
+            println("Prime number: $(substring[1:len])")
+            return num
+        end
+
+    end
+
+    println("No prime prefix found")
+    return nothing
+end
+
+third("pi.txt")
