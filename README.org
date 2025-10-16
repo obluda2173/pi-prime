@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2025-10-16>
-#+lastmod: <2025-10-16 22:20>
+#+lastmod: <2025-10-16 22:35>
 #+options: num:t
 #+startup: overview
 
@@ -12,3 +12,5 @@
 
 * How this works?
 - Apperently, I can not upload any file greater than 100MB to github (pi number is 1GB). Therefore, I have to store it locally and also put it into any cloud for remote access.
+- To download the file you should use the following link:
+  [[https://drive.google.com/file/d/1PUmy9a8sRsoXvGgo7h4Vewufu9iQWGHA/view?usp=sharing ][Link to google drive]]

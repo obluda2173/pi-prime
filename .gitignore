@@ -10,4 +10,4 @@
 *~
 .vscode/
 .idea/
-./data/pi.txt
+*pi.txt
