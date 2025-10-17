@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2025-10-16>
-#+lastmod: <2025-10-16 23:32>
+#+lastmod: <2025-10-17 06:47>
 #+options: num:t
 #+startup: overview
 
@@ -26,6 +26,8 @@
   #+begin_src bash
   make run
   #+end_src
+
+- You can find Pi-primes in primes folder.
 
 * Sources
 - [[https://www.youtube.com/watch?v=zmhUlVck3J0][Miller-Rabin test explained (video)]]
