@@ -48,7 +48,7 @@ function is_divisible_by_small_primes(num)
     return false
 end
 
-function third(filename, rounds=20, max_length=6205)
+function third(filename, rounds=20, max_length=561460)
     str = read(filename, String)
     digits_str = str[3:end] # skip the "1."
 
