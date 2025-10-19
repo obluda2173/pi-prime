@@ -48,14 +48,18 @@ function is_divisible_by_small_primes(num)
     return false
 end
 
-function third(filename, rounds=20, max_length=561460)
+function third(filename, rounds=20, max_length=1000000000)
     str = read(filename, String)
     digits_str = str[3:end] # skip the "1."
 
-    for len in min(max_length, length(digits_str)):-1:1
+    for len in 63500:1:length(digits_str)
         substring = digits_str[1:len]
 
-        if substring[end] in ('0', '2', '4', '5', '6', '8') # simple optimisation
+        if len % 100 == 0
+            println(len)
+        end
+
+        if substring[end] in ['0', '2', '4', '5', '6', '8'] # simple optimisation
             continue
         end
 
@@ -72,13 +76,13 @@ function third(filename, rounds=20, max_length=561460)
             println("Accuracy of the found number being prime is: $accuracy")
             write_to_file(prime_filename, substring[1:len])
             println("Prime number has been stored into $prime_filename")
-            return num
+            # return num
         end
 
     end
 
     println("No prime prefix found")
-    return nothing
+    # return nothing
 end
 
 third("pi.txt", 2)
