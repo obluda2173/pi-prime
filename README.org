@@ -2,14 +2,14 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2025-10-16>
-#+lastmod: <2025-10-24 08:49>
+#+lastmod: <2025-10-24 08:50>
 #+options: num:t
 #+startup: overview
 
 
-* This project revolves around the handling of extraordinarily large numbers in Julia through the use of the BigInt datatype and the application of the Miller-Rabin primality test.
+This project revolves around the handling of extraordinarily large numbers in Julia through the use of the BigInt datatype and the application of the Miller-Rabin primality test.
 
-** Getting Started
+* Getting Started
 
 This repository does not include large data files due to GitHub's size limitation. Thus, you need to manually download the required file [[https://drive.google.com/file/d/1PUmy9a8sRsoXvGgo7h4Vewufu9iQWGHA/view?usp=sharing][from google drive]] and place it in the repository root.
 
@@ -21,13 +21,13 @@ make run
 
 The results can be found in the =primes= folder.
 
-** Dealing with Big Numbers in Julia
+* Dealing with Big Numbers in Julia
 
 Julia's BigInt datatype facilitates the manipulation of extremely large numbers, well beyond the scope of the typical 16-byte limit for UInt128. BigInt is an arbitrary precision integer that can handle any number as long as your system has enough RAM.
 
 Nevertheless, it is recommended to only use BigInt when dealing with numbers that exceed the capacity of other datatypes. The computation with BigInt is slower due to the significant memory it requires.
 
-** Miller–Rabin Primality Test
+* Miller–Rabin Primality Test
 
 This project employs the [[https://de.wikipedia.org/wiki/Miller-Rabin-Test][Miller-Rabin test]] to identify primes. Julia's built-in function for this test is used.
 
