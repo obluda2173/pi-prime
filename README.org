@@ -2,33 +2,35 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2025-10-16>
-#+lastmod: <2025-10-17 06:47>
+#+lastmod: <2025-10-24 08:49>
 #+options: num:t
 #+startup: overview
 
-* General notes
-- How to operate with big numbers in Julia?
-  - I can not use int values, since its lame to have only 16 bytes for UInt128 in Julia. However, apperently, I can use the Julia's BigInt to store extremely big numbers, since its an arbitrary precision integer, which relies solely on RAM (I have 24GB, so its pretty enough).
 
-- For realle big numbers I should stop using the BigInt objects unless I actually need them, since this slows calculations.
+* This project revolves around the handling of extraordinarily large numbers in Julia through the use of the BigInt datatype and the application of the Miller-Rabin primality test.
 
-- I should aim for the [[- I should aim for the https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test][Miller–Rabin test]]
-  - Built in Julia function uses Miller-Rabin test by default.
+** Getting Started
 
-* How this works?
-- Apperently, I can not upload any file greater than 100MB to github (pi number is 1GB). Therefore, I have to store it locally and also put it into any cloud for remote access.
+This repository does not include large data files due to GitHub's size limitation. Thus, you need to manually download the required file [[https://drive.google.com/file/d/1PUmy9a8sRsoXvGgo7h4Vewufu9iQWGHA/view?usp=sharing][from google drive]] and place it in the repository root.
 
-- To download the file you should use the following link:
-  [[https://drive.google.com/file/d/1PUmy9a8sRsoXvGgo7h4Vewufu9iQWGHA/view?usp=sharing ][Link to google drive]]
-  Once you donwload it, drop it to the repository root.
+To run the program, execute this command:
 
-- Then just simply run
-  #+begin_src bash
-  make run
-  #+end_src
+#+begin_src bash
+make run
+#+end_src
 
-- You can find Pi-primes in primes folder.
+The results can be found in the =primes= folder.
 
-* Sources
-- [[https://www.youtube.com/watch?v=zmhUlVck3J0][Miller-Rabin test explained (video)]]
-- [[https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test][MR test implimintation]]
+** Dealing with Big Numbers in Julia
+
+Julia's BigInt datatype facilitates the manipulation of extremely large numbers, well beyond the scope of the typical 16-byte limit for UInt128. BigInt is an arbitrary precision integer that can handle any number as long as your system has enough RAM.
+
+Nevertheless, it is recommended to only use BigInt when dealing with numbers that exceed the capacity of other datatypes. The computation with BigInt is slower due to the significant memory it requires.
+
+** Miller–Rabin Primality Test
+
+This project employs the [[https://de.wikipedia.org/wiki/Miller-Rabin-Test][Miller-Rabin test]] to identify primes. Julia's built-in function for this test is used.
+
+For a detailed understanding, refer to this test [[https://www.youtube.com/watch?v=zmhUlVck3J0][video explanation]] of the Miller-Rabin test.
+
+For the specific implementation used in this project, refer to the code provided at [[https://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test][Rosetta Code]]
